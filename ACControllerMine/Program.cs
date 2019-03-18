@@ -10,6 +10,10 @@ namespace ACControllerMine
     {
         static void Main(string[] args)
         {
+            var culture = CultureInfo
+                .CreateSpecificCulture("ar-SA");
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
             var controller = new Controller();
             controller.Test();
         }
