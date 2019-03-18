@@ -10,17 +10,8 @@ namespace ACControllerMine
     {
         static void Main(string[] args)
         {
-            var culture = CultureInfo
-            .CreateSpecificCulture("es-MX");
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-
-            var resMan = new ResourceManager(
-            "ACControllerMine.strings",
-            typeof(Program).GetTypeInfo().Assembly);
-            Console.WriteLine(
-            resMan.GetString("ExhaustAirTemp") +
-            TempControl.ExhaustAirTemp);
+            var controller = new Controller();
+            controller.Test();
         }
     }
 }
