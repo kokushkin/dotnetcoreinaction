@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <Resx Include="resources\*.restext" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="resources\*.resources" />
   </ItemGroup>
 

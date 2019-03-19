@@ -6,7 +6,7 @@ using System.Text;
 namespace ACControllerMine
 {
     [EventSource(LocalizationResources =
-    "ACController.resources.EventSource")]
+    "ACControllerMine.resources.EventSource")]
     public class ACControllerEventSource : EventSource
     {
         [Event(1)]
