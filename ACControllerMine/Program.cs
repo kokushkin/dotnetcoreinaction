@@ -12,7 +12,7 @@ namespace ACControllerMine
         static void Main(string[] args)
         {
             var culture = CultureInfo
-                .CreateSpecificCulture("ar-SA");
+                .CreateSpecificCulture("es-MX");
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
             using (var listener =

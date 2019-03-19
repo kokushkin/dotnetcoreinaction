@@ -1,0 +1,3 @@
+﻿event_ExhaustAirTemp=Temp del aire del extractor: {0} C
+event_CoolantTemp=Temperatura del refrigerante: {0} C
+event_OutsideAirTemp=Temperatura del aire exterior: {0} C
