@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace ACControllerMine
@@ -19,6 +20,12 @@ namespace ACControllerMine
         {
             Console.WriteLine(string.Join(" ",
             DateTime.Now, logLevel,
+            formatter(state, exception)));
+
+            Console.WriteLine(string.Join(" ",
+            DateTime.Now.ToString(
+            CultureInfo.InvariantCulture.DateTimeFormat),
+            logLevel,
             formatter(state, exception)));
         }
     }

@@ -7,15 +7,15 @@ namespace ACControllerMine
 {
     public class Telemetry
     {
-        private readonly ILogger logger;
-        private readonly IStringLocalizer localizer;
+        //private readonly ILogger logger;
+        //private readonly IStringLocalizer localizer;
 
-        public Telemetry(ILogger logger,
-            IStringLocalizer localizer)
-            {
-                this.logger = logger;
-                this.localizer = localizer;
-            }
+        //public Telemetry(ILogger logger,
+        //    IStringLocalizer localizer)
+        //    {
+        //        this.logger = logger;
+        //        this.localizer = localizer;
+        //    }
 
         //public void LogStatus()
         //{
@@ -32,12 +32,16 @@ namespace ACControllerMine
 
         public void LogStatus()
         {
-            logger.LogInformation(localizer["Exhaust Air Temp: {0} C"],
-            TempControl.ExhaustAirTemp);
-            logger.LogInformation(localizer["Coolant Temp: {0} C"],
-            TempControl.CoolantTemp);
-            logger.LogInformation(localizer["Outside Air Temp: {0} C"],
-            TempControl.OutsideAirTemp);
+            Controller.Events.ExhaustAirTemp(TempControl.ExhaustAirTemp);
+            Controller.Events.CoolantTemp(TempControl.CoolantTemp);
+            Controller.Events.OutsideAirTemp(TempControl.OutsideAirTemp);
+
+            //logger.LogInformation(localizer["Exhaust Air Temp: {0} C"],
+            //TempControl.ExhaustAirTemp);
+            //logger.LogInformation(localizer["Coolant Temp: {0} C"],
+            //TempControl.CoolantTemp);
+            //logger.LogInformation(localizer["Outside Air Temp: {0} C"],
+            //TempControl.OutsideAirTemp);
         }
     }
 }

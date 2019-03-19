@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -14,8 +15,14 @@ namespace ACControllerMine
                 .CreateSpecificCulture("ar-SA");
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
-            var controller = new Controller();
-            controller.Test();
+            using (var listener =
+                new ConsoleEventListener())
+            {
+                listener.EnableEvents(Controller.Events,
+                EventLevel.Verbose);
+                var controller = new Controller();
+                controller.Test();
+            }
         }
     }
 }
